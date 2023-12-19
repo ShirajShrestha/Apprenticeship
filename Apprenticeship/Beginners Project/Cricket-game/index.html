@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cricket</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <h1 class="title">Bat Ball Stump Game</h1>
+      <div class="scoreboard">
+        <h2>Score</h2>
+        <div class="score">
+          <h2 class="player1">0</h2>
+          <h2>:</h2>
+          <h2 class="player2">0</h2>
+        </div>
+      </div>
+      <div class="choices">
+        <img src="images/bat.png" value="0" alt="Bat" class="Bat" />
+        <img src="images/ball.png" value="1" alt="Ball" class="Ball" />
+        <img src="images/stump.png" value="2" alt="Stump" class="Stump" />
+      </div>
+      <div class="result">
+        <p class="user-input"></p>
+        <p class="computer-input"></p>
+        <p class="winner"></p>
+      </div>
+      <button class="reset">Reset Score</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
