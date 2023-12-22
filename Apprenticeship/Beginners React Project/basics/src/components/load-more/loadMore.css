@@ -1,0 +1,21 @@
+img {
+  width: 100%;
+}
+
+.load-more-wrapper {
+  width: 100%;
+}
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  width: 80%;
+  margin: auto;
+  align-items: end;
+}
+
+.product-wrapper .product {
+  border-radius: 5px;
+  padding: 0.5rem;
+}

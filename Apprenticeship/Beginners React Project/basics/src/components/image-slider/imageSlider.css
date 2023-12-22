@@ -5,6 +5,7 @@ img {
 .image-slider-wrapper {
   position: relative;
   width: 80%;
+  height: 80vh;
   margin: auto;
   display: flex;
   justify-content: center;
