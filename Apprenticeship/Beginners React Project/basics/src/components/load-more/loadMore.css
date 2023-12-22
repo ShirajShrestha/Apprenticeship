@@ -19,3 +19,13 @@ img {
   border-radius: 5px;
   padding: 0.5rem;
 }
+
+.load-btn button {
+  padding: 0.5rem 1.5rem;
+  font-size: 18px;
+  background-color: #4d4d4d;
+  color: white;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 10px;
+}

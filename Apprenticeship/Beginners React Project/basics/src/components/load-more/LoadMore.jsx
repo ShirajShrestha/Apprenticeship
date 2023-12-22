@@ -25,10 +25,12 @@ const LoadMore = () => {
       const result = await response.json();
       if (result && result.products && result.products.length) {
         // setProducts((prevData) => [...prevData, ...result.products]);
-        setProducts((prevData) => {
-          const uniqueProducts = new Set([...prevData, ...result.products]);
-          return [...uniqueProducts];
-        });
+        count === 0
+          ? setProducts(result.products)
+          : setProducts((prevData) => {
+              const uniqueProducts = new Set([...prevData, ...result.products]);
+              return [...uniqueProducts];
+            });
         setLoading(false);
       }
       console.log(result);
