@@ -6,7 +6,8 @@ import "./App.css";
 // import LoadMore from "./components/load-more/LoadMore";
 // import TreeMenu from "./components/tree-menu/TreeMenu";
 // import MenuData from "./components/tree-menu/MenuData";
-import QR from "./components/qr-code-generator/QR";
+// import QR from "./components/qr-code-generator/QR";
+import ThemeChange from "./components/theme-change/ThemeChange";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       /> */}
       {/* <LoadMore /> */}
       {/* <TreeMenu menu={MenuData} /> */}
-      <QR />
+      {/* <QR /> */}
+      <ThemeChange />
     </div>
   );
 }
