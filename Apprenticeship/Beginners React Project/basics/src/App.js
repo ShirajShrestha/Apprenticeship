@@ -7,7 +7,9 @@ import "./App.css";
 // import TreeMenu from "./components/tree-menu/TreeMenu";
 // import MenuData from "./components/tree-menu/MenuData";
 // import QR from "./components/qr-code-generator/QR";
-import ThemeChange from "./components/theme-change/ThemeChange";
+// import ThemeChange from "./components/theme-change/ThemeChange";
+// import Check from "./components/scroll-indicator/Check";
+import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
       {/* <LoadMore /> */}
       {/* <TreeMenu menu={MenuData} /> */}
       {/* <QR /> */}
-      <ThemeChange />
+      {/* <ThemeChange /> */}
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      {/* <Check /> */}
     </div>
   );
 }

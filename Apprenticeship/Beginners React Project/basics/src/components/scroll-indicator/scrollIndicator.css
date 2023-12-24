@@ -1,0 +1,46 @@
+/* .scroll-indicator {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 5rem;
+  background: #000;
+  color: #fff;
+}
+
+.tracker-wrapper {
+  width: 100%;
+  height: 10px;
+  background: crimson;
+}
+
+.scroll-tracker {
+  height: 10px;
+  background: #4c4c4c;
+} */
+
+.top-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.tracker-wrapper {
+  width: 100%;
+  height: 5px;
+  background: rgb(246, 132, 155);
+}
+
+.progress-bar {
+  height: 5px;
+  background: rgb(159, 159, 248);
+  width: 0%;
+}
+
+.data-wrapper {
+  margin-top: 100px;
+}
