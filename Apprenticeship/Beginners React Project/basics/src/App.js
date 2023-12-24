@@ -10,7 +10,8 @@ import "./App.css";
 // import ThemeChange from "./components/theme-change/ThemeChange";
 // import Check from "./components/scroll-indicator/Check";
 // import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
-import CustomTabs from "./components/custom-tabs/CustomTabs";
+// import CustomTabs from "./components/custom-tabs/CustomTabs";
+import ModalPopup from "./components/modal-popup/ModalPopup";
 function App() {
   return (
     <div className="App">
@@ -28,7 +29,8 @@ function App() {
       {/* <ThemeChange /> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
       {/* <Check /> */}
-      <CustomTabs />
+      {/* <CustomTabs /> */}
+      <ModalPopup />
     </div>
   );
 }
