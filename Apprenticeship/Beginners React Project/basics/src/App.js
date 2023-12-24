@@ -1,11 +1,12 @@
 import "./App.css";
-import MenuData from "./components/tree-menu/MenuData";
 // import Accordian from "./components/accordian/Accordian";
 // import RandomColor from "./components/random-color-generator/RandomColor";
 // import StarRating from "./components/star-rating/StarRating";
 // import ImageSlider from "./components/image-slider/ImageSlider";
 // import LoadMore from "./components/load-more/LoadMore";
-import TreeMenu from "./components/tree-menu/TreeMenu";
+// import TreeMenu from "./components/tree-menu/TreeMenu";
+// import MenuData from "./components/tree-menu/MenuData";
+import QR from "./components/qr-code-generator/QR";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         limit={"10"}
       /> */}
       {/* <LoadMore /> */}
-      <TreeMenu menu={MenuData} />
+      {/* <TreeMenu menu={MenuData} /> */}
+      <QR />
     </div>
   );
 }
