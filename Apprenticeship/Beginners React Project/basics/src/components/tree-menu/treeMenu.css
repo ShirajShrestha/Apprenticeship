@@ -1,0 +1,21 @@
+.tree-menu-wrapper {
+  min-height: 100vh;
+  width: 21.5rem;
+  background: rgb(96, 96, 247);
+}
+
+.menu-list-wrapper {
+  list-style: none;
+  margin: 0;
+}
+
+.list-items {
+  color: #fff;
+  cursor: pointer;
+}
+
+.each-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
