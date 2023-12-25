@@ -12,7 +12,8 @@ import "./App.css";
 // import ScrollIndicator from "./components/scroll-indicator/ScrollIndicator";
 // import CustomTabs from "./components/custom-tabs/CustomTabs";
 // import ModalPopup from "./components/modal-popup/ModalPopup";
-import GithubFinder from "./components/github-finder/GithubFinder";
+// import GithubFinder from "./components/github-finder/GithubFinder";
+import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
       {/* <Check /> */}
       {/* <CustomTabs /> */}
       {/* <ModalPopup /> */}
-      <GithubFinder />
+      {/* <GithubFinder /> */}
+      <SearchAutocomplete />
     </div>
   );
 }
