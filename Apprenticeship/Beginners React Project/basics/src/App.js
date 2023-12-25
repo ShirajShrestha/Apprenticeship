@@ -17,7 +17,8 @@ import "./App.css";
 // import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 // import FeatureFlag from "./components/feature-flag/FeatureFlag";
 // import FlagContext from "./components/feature-flag/context/FlagContext";
-import HookTest from "./components/use-fetch/HookTest";
+// import HookTest from "./components/use-fetch/HookTest";
+import ClickOutTest from "./components/click-outside/ClickOutTest";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
       {/* <FlagContext>
         <FeatureFlag />
       </FlagContext> */}
-      <HookTest />
+      {/* <HookTest /> */}
+      <ClickOutTest />
     </div>
   );
 }
