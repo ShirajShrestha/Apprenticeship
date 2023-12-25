@@ -1,0 +1,48 @@
+.github-finder-wrapper {
+  padding: 1rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  margin: 0.5rem 0;
+}
+
+.search-bar,
+button {
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  margin: 0 0.2rem;
+}
+
+.input-wrapper button {
+  background-color: #76dd99;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.image-wrapper {
+  width: 15rem;
+  margin: auto;
+}
+
+.user-wrapper {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
