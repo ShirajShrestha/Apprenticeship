@@ -13,7 +13,8 @@ import "./App.css";
 // import CustomTabs from "./components/custom-tabs/CustomTabs";
 // import ModalPopup from "./components/modal-popup/ModalPopup";
 // import GithubFinder from "./components/github-finder/GithubFinder";
-import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
+// import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 
 function App() {
   return (
@@ -35,7 +36,8 @@ function App() {
       {/* <CustomTabs /> */}
       {/* <ModalPopup /> */}
       {/* <GithubFinder /> */}
-      <SearchAutocomplete />
+      {/* <SearchAutocomplete /> */}
+      <TicTacToe />
     </div>
   );
 }
