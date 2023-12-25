@@ -18,7 +18,8 @@ import "./App.css";
 // import FeatureFlag from "./components/feature-flag/FeatureFlag";
 // import FlagContext from "./components/feature-flag/context/FlagContext";
 // import HookTest from "./components/use-fetch/HookTest";
-import ClickOutTest from "./components/click-outside/ClickOutTest";
+// import ClickOutTest from "./components/click-outside/ClickOutTest";
+import WindowTest from "./components/window-resize/WindowTest";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
         <FeatureFlag />
       </FlagContext> */}
       {/* <HookTest /> */}
-      <ClickOutTest />
+      {/* <ClickOutTest /> */}
+      <WindowTest />
     </div>
   );
 }
