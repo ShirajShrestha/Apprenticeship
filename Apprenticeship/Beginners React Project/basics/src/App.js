@@ -14,7 +14,10 @@ import "./App.css";
 // import ModalPopup from "./components/modal-popup/ModalPopup";
 // import GithubFinder from "./components/github-finder/GithubFinder";
 // import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
-import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+// import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+// import FeatureFlag from "./components/feature-flag/FeatureFlag";
+// import FlagContext from "./components/feature-flag/context/FlagContext";
+import HookTest from "./components/use-fetch/HookTest";
 
 function App() {
   return (
@@ -37,7 +40,11 @@ function App() {
       {/* <ModalPopup /> */}
       {/* <GithubFinder /> */}
       {/* <SearchAutocomplete /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+      {/* <FlagContext>
+        <FeatureFlag />
+      </FlagContext> */}
+      <HookTest />
     </div>
   );
 }
