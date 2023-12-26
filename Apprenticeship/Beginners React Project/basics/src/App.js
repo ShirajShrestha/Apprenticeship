@@ -19,7 +19,8 @@ import "./App.css";
 // import FlagContext from "./components/feature-flag/context/FlagContext";
 // import HookTest from "./components/use-fetch/HookTest";
 // import ClickOutTest from "./components/click-outside/ClickOutTest";
-import WindowTest from "./components/window-resize/WindowTest";
+// import WindowTest from "./components/window-resize/WindowTest";
+import ScrollTopBottom from "./components/scroll-top-and-bottom/ScrollTopBottom";
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
       </FlagContext> */}
       {/* <HookTest /> */}
       {/* <ClickOutTest /> */}
-      <WindowTest />
+      {/* <WindowTest /> */}
+      <ScrollTopBottom />
     </div>
   );
 }
