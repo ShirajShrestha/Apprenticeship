@@ -14,7 +14,7 @@ import "./App.css";
 // import ModalPopup from "./components/modal-popup/ModalPopup";
 // import GithubFinder from "./components/github-finder/GithubFinder";
 // import SearchAutocomplete from "./components/search-autocomplete/SearchAutocomplete";
-// import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 // import FeatureFlag from "./components/feature-flag/FeatureFlag";
 // import FlagContext from "./components/feature-flag/context/FlagContext";
 // import HookTest from "./components/use-fetch/HookTest";
@@ -22,11 +22,12 @@ import "./App.css";
 // import WindowTest from "./components/window-resize/WindowTest";
 // import ScrollTopBottom from "./components/scroll-top-and-bottom/ScrollTopBottom";
 // import ScrollToSection from "./components/scroll-top-and-bottom/ScrollToSection";
-import Weather from "./components/weather-app/weather/Weather";
+// import Weather from "./components/weather-app/weather/Weather";
 
 function App() {
   return (
-    <div className="App">
+    // <div className="App">
+    <div>
       {/* <Accordian /> */}
       {/* <RandomColor /> */}
       {/* <StarRating /> */}
@@ -45,7 +46,7 @@ function App() {
       {/* <ModalPopup /> */}
       {/* <GithubFinder /> */}
       {/* <SearchAutocomplete /> */}
-      {/* <TicTacToe /> */}
+      <TicTacToe />
       {/* <FlagContext>
         <FeatureFlag />
       </FlagContext> */}
@@ -54,7 +55,7 @@ function App() {
       {/* <WindowTest /> */}
       {/* <ScrollTopBottom /> */}
       {/* <ScrollToSection /> */}
-      <Weather />
+      {/* <Weather /> */}
     </div>
   );
 }
