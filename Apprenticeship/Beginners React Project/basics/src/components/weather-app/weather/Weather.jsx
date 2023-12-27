@@ -10,7 +10,7 @@ const Weather = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${params}&appid=d729395d12b71b06390cb46ef9b2747e`
+        `https://api.openweathermap.org/data/2.5/weather?q=${params}&appid={API key}`
       );
       const responseData = await response.json();
       console.log(responseData);
