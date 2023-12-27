@@ -20,7 +20,8 @@ import "./App.css";
 // import HookTest from "./components/use-fetch/HookTest";
 // import ClickOutTest from "./components/click-outside/ClickOutTest";
 // import WindowTest from "./components/window-resize/WindowTest";
-import ScrollTopBottom from "./components/scroll-top-and-bottom/ScrollTopBottom";
+// import ScrollTopBottom from "./components/scroll-top-and-bottom/ScrollTopBottom";
+import ScrollToSection from "./components/scroll-top-and-bottom/ScrollToSection";
 
 function App() {
   return (
@@ -50,7 +51,8 @@ function App() {
       {/* <HookTest /> */}
       {/* <ClickOutTest /> */}
       {/* <WindowTest /> */}
-      <ScrollTopBottom />
+      {/* <ScrollTopBottom /> */}
+      <ScrollToSection />
     </div>
   );
 }
