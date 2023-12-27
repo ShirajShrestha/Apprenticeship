@@ -21,7 +21,8 @@ import "./App.css";
 // import ClickOutTest from "./components/click-outside/ClickOutTest";
 // import WindowTest from "./components/window-resize/WindowTest";
 // import ScrollTopBottom from "./components/scroll-top-and-bottom/ScrollTopBottom";
-import ScrollToSection from "./components/scroll-top-and-bottom/ScrollToSection";
+// import ScrollToSection from "./components/scroll-top-and-bottom/ScrollToSection";
+import Weather from "./components/weather-app/weather/Weather";
 
 function App() {
   return (
@@ -52,7 +53,8 @@ function App() {
       {/* <ClickOutTest /> */}
       {/* <WindowTest /> */}
       {/* <ScrollTopBottom /> */}
-      <ScrollToSection />
+      {/* <ScrollToSection /> */}
+      <Weather />
     </div>
   );
 }
