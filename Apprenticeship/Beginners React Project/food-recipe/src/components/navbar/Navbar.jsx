@@ -1,20 +1,27 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { GlobalCoxtext } from "../../context/GlobalState";
 
 const Navbar = () => {
+  const { searchParam, setSearchParam, handleSubmit } =
+    useContext(GlobalCoxtext);
+
   return (
     <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap:0">
       <h2 className="text-2xl font-semibold ">
         <NavLink
-          to={"/"}
+          to={`/`}
           className="text-black hover:text-gray-700 duration-300"
         >
           Food Recepie
         </NavLink>
       </h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter items"
+          value={searchParam}
+          onChange={(e) => setSearchParam(e.target.value)}
           className="bg-white/75 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-red-100 focus:shadow-red-200"
         />
         <ul className="flex gap-5">
