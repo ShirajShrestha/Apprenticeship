@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import connectDb from "../config/dbConnection";
+import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 
 const app = express();
@@ -11,7 +12,7 @@ app.use(cors());
 connectDb();
 
 const PORT = process.env.PORT;
-
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
 app.listen(PORT, () => {
