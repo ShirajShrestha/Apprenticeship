@@ -1,0 +1,29 @@
+.toast-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast-message {
+  font-size: large;
+  font-weight: 600;
+}
+
+.toast-type {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fff;
+  max-width: 28rem; /* 448px */
+}
+
+.success {
+  background-color: #1ce41c;
+}
+
+.error {
+  background-color: #fb0839;
+}
