@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import "../styles/register.css";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ export type RegisterFormData = {
 };
 
 const Register = () => {
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
   const { showToast } = useAppContext();
   const {
@@ -24,8 +25,9 @@ const Register = () => {
   } = useForm<RegisterFormData>();
 
   const mutation = useMutation(apiClient.register, {
-    onSuccess: () => {
+    onSuccess: async () => {
       showToast({ message: "Registration Successful", type: "SUCCESS" });
+      await queryClient.invalidateQueries("validateToken");
       navigate("/");
     },
     onError: (error: Error) => {
@@ -42,22 +44,22 @@ const Register = () => {
       <form className="form-container" onSubmit={onSubmit}>
         <h2 className="title-text">Create an Account</h2>
         <div className="name-wrapper">
-          <label htmlFor="first-name" className="user-input first-name">
+          <label htmlFor="first-name" className="user-input first-name flex-1">
             First Name
             <input
               type="text"
-              className="name-input "
+              className="name-input"
               {...register("firstName", { required: "This field is required" })}
             />
             {errors.firstName && (
               <span className="text-red-500">{errors.firstName.message} </span>
             )}
           </label>
-          <label htmlFor="last-name" className="user-input last-name">
+          <label htmlFor="last-name" className="user-input last-name flex-1">
             Last Name
             <input
               type="text"
-              className="name-input "
+              className="name-input"
               {...register("lastName", { required: "This field is required" })}
             />
             {errors.lastName && (

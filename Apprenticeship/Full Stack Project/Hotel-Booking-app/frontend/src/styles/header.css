@@ -34,3 +34,19 @@
 .sign-in-btn:hover {
   background: rgb(238, 226, 226);
 }
+
+.header-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  /* padding: 0.15rem 0.5rem; */
+  margin-right: 0.75rem;
+}
+
+.header-link:hover {
+  /* background: #4f4fea; */
+  /* border-radius: 8px; */
+  padding-bottom: 0;
+  border-bottom: 4px solid #fff;
+}

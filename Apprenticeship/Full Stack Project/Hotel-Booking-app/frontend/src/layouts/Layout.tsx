@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
     <div className=" layout-container">
       <Header />
       <Hero />
-      <div className="flex-1 main-content">{children}</div>
+      <div className="main-content flex-1 ">{children}</div>
       <Footer />
     </div>
   );
