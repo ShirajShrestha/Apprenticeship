@@ -7,8 +7,8 @@ const connectDb = async () => {
     );
     console.log(
       "Database connected. ",
-      "host:",
-      connect.connection.host,
+      // "host:",
+      // connect.connection.host,
       "db_name:",
       connect.connection.name
     );
