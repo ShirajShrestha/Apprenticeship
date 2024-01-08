@@ -6,6 +6,7 @@ import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 import cookieParser from "cookie-parser";
 import path from "path";
+import connentCloudinary from "../config/connectCloud";
 
 const app = express();
 app.use(cookieParser());
@@ -18,6 +19,7 @@ app.use(
   })
 );
 connectDb();
+connentCloudinary();
 
 const PORT = process.env.PORT;
 
