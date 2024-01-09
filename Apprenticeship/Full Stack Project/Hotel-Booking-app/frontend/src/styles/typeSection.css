@@ -1,0 +1,32 @@
+.type-heading {
+  font-weight: bold;
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  margin-bottom: 0.75rem;
+}
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.custom-option {
+  cursor: pointer;
+  font-size: small;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.selected-option {
+  background-color: #7979e5;
+}
+
+.unselected-option {
+  background-color: #c8c5c5;
+}
+
+.remove-circle {
+  display: none;
+}

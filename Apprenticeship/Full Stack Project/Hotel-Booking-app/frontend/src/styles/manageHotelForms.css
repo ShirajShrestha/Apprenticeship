@@ -1,0 +1,23 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hotel-form-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hotel-submit-btn {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.hotel-submit-btn:hover {
+  background-color: #4040ff;
+}
