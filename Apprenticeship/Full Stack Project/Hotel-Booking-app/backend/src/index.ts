@@ -5,6 +5,7 @@ import connectDb from "../config/dbConnection";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 import myHotelRoutes from "./routes/my-hotels";
+import hotelRoutes from "./routes/hotels";
 import cookieParser from "cookie-parser";
 import path from "path";
 import connentCloudinary from "../config/connectCloud";
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
+app.use("/api/hotels", hotelRoutes);
 
 // Non API Routes
 app.get("*", (req: Request, res: Response) => {
