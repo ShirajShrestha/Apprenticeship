@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <div className=" header-container">
-      <div className=" header-wrapper">
+      <div className=" header-wrapper container">
         <span className=" header-text-link">
           <Link to="/">MernHolidays.com</Link>
         </span>
