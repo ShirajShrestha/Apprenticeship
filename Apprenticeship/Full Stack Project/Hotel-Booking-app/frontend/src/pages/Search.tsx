@@ -119,12 +119,12 @@ const Search = () => {
         {hotelData?.data.map((hotel) => (
           <SearchResultsCard hotel={hotel} />
         ))}
+        <Pagination
+          page={hotelData?.pagination.page || 1}
+          pages={hotelData?.pagination.pages || 1}
+          onPageChange={(page) => setPage(page)}
+        />
       </div>
-      <Pagination
-        page={hotelData?.pagination.page || 1}
-        pages={hotelData?.pagination.pages || 1}
-        onPageChange={(page) => setPage(page)}
-      />
     </div>
   );
 };
