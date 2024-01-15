@@ -40,7 +40,7 @@ const SearchBar = () => {
         <MdTravelExplore size={25} className="mr-2" />
         <input
           type="text"
-          placeholder="Search Hotels"
+          placeholder="Where are you going?"
           className="text-md w-full focus:outline-none"
           value={destination}
           onChange={(event) => setDestination(event.target.value)}
@@ -93,7 +93,7 @@ const SearchBar = () => {
           endDate={checkOut}
           minDate={minDate}
           maxDate={maxDate}
-          placeholderText="Check-in Date"
+          placeholderText="Check-out Date"
           className="min-w-full bg-white p-2 focus:outline-none"
           wrapperClassName="min-w-full"
         />
