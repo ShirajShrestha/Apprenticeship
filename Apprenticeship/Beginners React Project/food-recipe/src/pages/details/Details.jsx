@@ -15,7 +15,7 @@ const Details = () => {
       const responseData = await response.json();
       console.log(responseData);
       if (responseData?.data) {
-        setRecipeData(recipeData?.data);
+        setRecipeData(responseData?.data);
       }
     }
     getRecipeData();

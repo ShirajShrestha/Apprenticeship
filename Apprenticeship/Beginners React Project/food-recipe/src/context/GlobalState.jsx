@@ -20,16 +20,16 @@ const GlobalState = ({ children }) => {
         `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchParam} `
       );
       const responseData = await response.json();
-      if (responseData.data.recipes) {
-        setRecipeList(responseData.data.recipes);
+      if (responseData?.data?.recipes) {
+        setRecipeList(responseData?.data?.recipes);
       }
       setLoading(false);
       setSearchParam("");
+      navigate("/");
     } catch (e) {
       console.log(e);
       setLoading(false);
       setSearchParam("");
-      navigate("/");
     }
   };
 
@@ -48,7 +48,7 @@ const GlobalState = ({ children }) => {
 
     setFavouritesList(cpyFavouritesList);
   }
-  //   console.log(recipeList);
+  // console.log(recipeList, "favouriteList");
 
   return (
     <GlobalCoxtext.Provider
