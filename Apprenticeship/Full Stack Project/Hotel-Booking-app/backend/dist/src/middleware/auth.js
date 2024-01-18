@@ -17,7 +17,6 @@ const verifyToken = (req, res, next) => {
         next();
     }
     catch (error) {
-        console.log("JWT Verification Error:", error);
         return res.status(401).json({ message: "Unauthorized!" });
     }
 };
