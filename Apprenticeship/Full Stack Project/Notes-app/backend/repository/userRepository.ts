@@ -1,6 +1,11 @@
-import db from "../models/index";
+import db from "../models";
 
-export const createNewUser = async (userName, email, password, image) => {
+export const createNewUser = async (
+  userName: string,
+  email: string,
+  password: string,
+  image: string
+) => {
   return await db.User.create({
     userName: userName,
     email: email,
