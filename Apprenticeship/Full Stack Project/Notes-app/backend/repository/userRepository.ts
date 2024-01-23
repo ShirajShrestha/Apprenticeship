@@ -6,13 +6,20 @@ export const createNewUser = async (
   email: string,
   password: string,
   image: string
-): Promise<UserType> => {
-  return await db.User.create({
+) => {
+  const userData = {
     userName: userName,
     email: email,
     password: password,
     image: image,
-  });
+  };
+
+  // return await db.User.create({
+  //   userName: userName,
+  //   email: email,
+  //   password: password,
+  //   image: image,
+  // });
 };
 
 export const getAllUsers = async () => {
