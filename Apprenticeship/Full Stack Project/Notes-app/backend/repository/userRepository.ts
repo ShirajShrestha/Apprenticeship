@@ -1,27 +1,31 @@
 import db from "../models";
-import { UserType } from "../controllers/userController";
+// import { UserType } from "../controllers/userController";
+import bcrypt from "bcrypt";
 
-export const createNewUser = async (
+//Registering new user in db
+export const registerUser = async (
   userName: string,
   email: string,
   password: string,
   image: string
 ) => {
-  const userData = {
-    userName: userName,
-    email: email,
-    password: password,
-    image: image,
-  };
+  try {
+    const saltRounds = 12;
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hashPassword = await bcrypt.hashSync(password, salt);
 
-  // return await db.User.create({
-  //   userName: userName,
-  //   email: email,
-  //   password: password,
-  //   image: image,
-  // });
+    return await db.User.create({
+      userName: userName,
+      email: email,
+      password: hashPassword,
+      image: image,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
+// fetching all user from db
 export const getAllUsers = async () => {
   return await db.User.findAll();
 };
