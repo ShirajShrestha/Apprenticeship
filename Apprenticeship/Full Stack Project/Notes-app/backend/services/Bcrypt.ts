@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require("sequelize");
+/*const { Sequelize, DataTypes } = require("sequelize");
 const useBcrypt = require("sequelize-bcrypt");
 
 const database = new Sequelize("FirstTest", "postgres", "shiraj3", {
@@ -18,3 +18,4 @@ useBcrypt(User, {
   rounds: 12, // used to generate bcrypt salt, default: 12
   compare: "authenticate", // method used to compare secrets, default: 'authenticate'
 });
+*/
