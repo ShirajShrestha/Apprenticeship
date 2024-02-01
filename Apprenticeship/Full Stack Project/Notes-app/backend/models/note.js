@@ -9,12 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Note.belongsTo(models.User, { foreignKey: "id" });
+      Note.belongsToMany(models.Tag, {
+        through: "NoteTags",
+        foreignKey: "noteId",
+      });
     }
   }
   Note.init(
     {
       title: DataTypes.STRING,
       description: DataTypes.STRING,
+      images: DataTypes.STRING,
+      file: DataTypes.STRING,
       status: DataTypes.STRING,
       date: DataTypes.DATE,
       priority: DataTypes.STRING,

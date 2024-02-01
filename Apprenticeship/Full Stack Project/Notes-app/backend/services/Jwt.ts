@@ -1,9 +1,10 @@
 import jwt from "jsonwebtoken";
+import { Request, Response } from "express";
 
-export const jwtWithCookie = (res, user) => {
+export const jwtWithCookie = (req: Request, res: Response, newUser: any) => {
   const token = jwt.sign(
-    { userId: user.id },
-    process.env.JWT_SECURE_KEY as string,
+    { userId: newUser.id },
+    process.env.JWT_SECRET_KEY as string,
     {
       expiresIn: "1d",
     }

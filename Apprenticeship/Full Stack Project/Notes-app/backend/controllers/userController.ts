@@ -1,6 +1,5 @@
 import db from "../models";
-import express, { Request, Response } from "express";
-import jwt from "jsonwebtoken";
+import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import {
   registerUser,
@@ -11,10 +10,6 @@ import { validationResult } from "express-validator";
 import { jwtWithCookie } from "../services/Jwt";
 
 export const register = async (req: Request, res: Response) => {
-  // const userName = req.body.userName;
-  // const email = req.body.email;
-  // const password = req.body.password;
-  // const image = req.body.image;
   const { userName, email, password, image } = req.body;
 
   //check if entries are empty or not
@@ -24,11 +19,7 @@ export const register = async (req: Request, res: Response) => {
   }
 
   try {
-    let user = await db.User.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
+    let user = await findUser(email);
 
     // if email already exists
     if (user) {
@@ -38,19 +29,8 @@ export const register = async (req: Request, res: Response) => {
     // If new user, save
     const newUser = await registerUser(userName, email, password, image);
 
-    const token = jwt.sign(
-      { userId: newUser.id },
-      process.env.JWT_SECRET_KEY as string,
-      {
-        expiresIn: "1d",
-      }
-    );
-
-    res.cookie("auth_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      maxAge: 86400000,
-    });
+    //Jwt with cookie service
+    jwtWithCookie(req, res, newUser);
 
     res.status(200).json({ message: "New User Added Successfully" });
   } catch (error) {
@@ -68,11 +48,7 @@ export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    const user = await db.User.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
+    let user = await findUser(email);
     if (!user) {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
@@ -82,19 +58,9 @@ export const login = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
 
-    const token = jwt.sign(
-      { userId: user.id },
-      process.env.JWT_SECRET_KEY as string,
-      {
-        expiresIn: "1d",
-      }
-    );
+    // Jwt and cookie service
+    jwtWithCookie(req, res, user);
 
-    res.cookie("auth_token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      maxAge: 86400000,
-    });
     return res
       .status(200)
       .json({ message: "Login Successful", userId: user.id });
