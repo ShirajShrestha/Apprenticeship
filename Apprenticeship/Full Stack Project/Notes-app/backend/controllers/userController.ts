@@ -1,5 +1,5 @@
 import db from "../models";
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import bcrypt from "bcrypt";
 import {
   registerUser,
@@ -8,6 +8,7 @@ import {
 } from "../repository/userRepository";
 import { validationResult } from "express-validator";
 import { jwtWithCookie } from "../services/Jwt";
+import { sendEmail } from "../services/SendMail";
 
 export const register = async (req: Request, res: Response) => {
   const { userName, email, password, image } = req.body;
@@ -48,7 +49,7 @@ export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    let user = await findUser(email);
+    const user = await findUser(email);
     if (!user) {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
@@ -70,6 +71,21 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
+export const forgotPassword = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  //1 get user based on the posted email
+  const { email } = req.body;
+  const user = await findUser(email);
+  if (!user) {
+    return res.status(400).json({ message: "User not found" });
+  }
+  //2 genereate a random reset token
+  //3 send the token to user email
+};
+
 export const getUsers = async (req: Request, res: Response) => {
   try {
     const users = await getAllUsers();
@@ -78,4 +94,13 @@ export const getUsers = async (req: Request, res: Response) => {
     console.log(error);
     res.status(500).json({ message: "Error Creating New User" });
   }
+};
+
+// for sending email
+export const mailService = async (req: Request, res: Response) => {
+  const sendingEmail = sendEmail();
+  if (!sendingEmail) {
+    res.status(500).send({ message: "Error sending email" });
+  }
+  res.status(200).send({ message: "Email sent successfully!" });
 };
