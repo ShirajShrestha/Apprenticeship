@@ -1,36 +1,70 @@
 import nodemailer from "nodemailer";
 
-const letterTemplate = `<!DOCTYPE html>
-<html lang="en" >
+const emailTemplate = `<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - OTP Email Template</title>
-  
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Recovery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    h1 {
+      color: #007bff;
+      text-align: center;
+    }
+    p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .otp {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff5722;
+      text-align: center;
+      margin-top: 20px;
+      background-color: #fff3e0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
-  <div style="margin:50px auto;width:70%;padding:20px 0">
-    <div style="border-bottom:1px solid #eee">
-      <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600">Koding 101</a>
-    </div>
-    <p style="font-size:1.1em">Hi,</p>
-    <p>Thank you for choosing Koding 101. Use the following OTP to complete your Password Recovery Procedure. OTP is valid for 5 minutes</p>
-    <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;">
-    Change this to {OTP} later
-    </h2>
-    <p style="font-size:0.9em;">Regards,<br />Koding 101</p>
-    <hr style="border:none;border-top:1px solid #eee" />
-    <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
-      <p>Zarc Inc</p>
-      <p>Sanepa Lalitpur</p>
-      <p>Nepal</p>
-    </div>
+  <div class="container">
+    <h1>Password Recovery</h1>
+    <p>
+      Hello [User Name],
+    </p>
+    <p>
+      You have requested to reset your password. Use the following OTP (One-Time Password) to reset your password:
+    </p>
+    <div class="otp">[Generated OTP]</div>
+    <p>
+      If you didn't request a password reset, you can ignore this email.
+    </p>
+    <div class="footer">
+      Best regards,<br>
+      Phantom Orion
+    </p>
   </div>
-</div>
-<!-- partial -->
-  
 </body>
 </html>`;
 
@@ -51,11 +85,11 @@ export const sendEmail = async () => {
       //   to,
       //   subject,
       //   text,
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
-      to: "rilado5311@flexvio.com", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>", // html body
+      from: '"Zarc Ahts 👻" <zarc@ahts.com>', // sender address
+      to: "voyano2455@namewok.com", // list of receivers
+      subject: "Reset Password", // Subject line
+      //text: "Recovery Email", // plain text body
+      html: emailTemplate, // html body
     };
 
     await transporter.sendMail(mailOptions);

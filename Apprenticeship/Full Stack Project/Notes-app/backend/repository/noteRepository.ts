@@ -34,3 +34,30 @@ export const getANote = async (req: Request, res: Response, id: string) => {
   });
   res.json(note);
 };
+
+export const findNote = async (id: any, uid: any) => {
+  return await db.Note.findOne({
+    where: {
+      id: id,
+      UserId: uid,
+    },
+  });
+};
+
+export const replaceNote = async (
+  note: any,
+  title: string,
+  description: string,
+  tags: string,
+  image: string,
+  file: string
+) => {
+  const updatedNote = await note.update({
+    title,
+    description,
+    tags,
+    image,
+    file,
+  });
+  return updatedNote;
+};

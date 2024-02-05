@@ -1,5 +1,11 @@
 import { Request, Response } from "express";
-import { getANote, getAllNotes, postNotes } from "../repository/noteRepository";
+import {
+  findNote,
+  getANote,
+  getAllNotes,
+  postNotes,
+  replaceNote,
+} from "../repository/noteRepository";
 
 export const postNote = async (req: Request, res: Response) => {
   const { title, description, tags, image, file } = req.body;
@@ -32,5 +38,29 @@ export const getNote = async (req: Request, res: Response) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Error fetching a note" });
+  }
+};
+
+export const updateNote = async (req: Request, res: Response) => {
+  const { id, uid } = req.params;
+  const { title, description, tags, image, file } = req.body;
+  try {
+    const note = findNote(id, uid);
+    if (!note) {
+      return res.status(404).json({ message: "Note not found" });
+    }
+
+    const updatedNote = replaceNote(
+      note,
+      title,
+      description,
+      tags,
+      image,
+      file
+    );
+
+    res.status(201).json(updatedNote);
+  } catch (error) {
+    res.status(500).json({ message: "Something went wrong" });
   }
 };

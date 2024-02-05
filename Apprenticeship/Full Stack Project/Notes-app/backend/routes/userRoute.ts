@@ -16,8 +16,6 @@ router.post("/register", verifyRegister, register);
 router.post("/login", verifyEmail, login);
 // Forgot password
 router.post("/forgotPassword");
-// Reset password
-router.post("/resetPassword");
 // Send email
 router.get("/sendEmail", mailService);
 
