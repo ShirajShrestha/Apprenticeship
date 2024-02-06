@@ -9,6 +9,8 @@ router.get("/getNotes", getNotes);
 // Get single note
 router.get("/.getNote/:id");
 // Update note
-router.put("/update/:id", updateNote);
+router.put("/:id", updateNote);
+// Delete note
+router.delete("/:id");
 
 export default router;

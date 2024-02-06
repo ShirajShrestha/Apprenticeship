@@ -61,3 +61,11 @@ export const replaceNote = async (
   });
   return updatedNote;
 };
+
+export const softDelete = async (id: any) => {
+  return await db.Note.findOne({
+    where: {
+      id: id,
+    },
+  });
+};

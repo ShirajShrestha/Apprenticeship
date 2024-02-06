@@ -36,6 +36,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Note",
+      // added these two to use softdelete
+      // paranoid: "true",
+      // timestamps:"true"
     }
   );
   return Note;
