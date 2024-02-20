@@ -1,4 +1,4 @@
-import { check } from "express-validator";
+import { body, check } from "express-validator";
 
 export const verifyRegister = [
   check("userName", "User Name is required").isString(),

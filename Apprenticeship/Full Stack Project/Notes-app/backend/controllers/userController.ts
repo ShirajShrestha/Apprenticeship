@@ -16,6 +16,7 @@ export const register = async (req: Request, res: Response) => {
   //check if entries are empty or not
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.log(errors);
     return res.status(400).json({ message: errors.array() });
   }
 
