@@ -1,7 +1,13 @@
 import { FaPlus, FaSearch, FaUser, FaBars } from "react-icons/fa";
 import Layout from "../layout/Layout";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const openNote = () => {
+    navigate("/note");
+  };
+
   return (
     <Layout>
       <div className=" m-auto w-80">
@@ -30,7 +36,7 @@ const Home = () => {
             </button>
           </span>
           <span className="border border-slate-600 rounded-full ml-8">
-            <button className="text-primary-light m-2">
+            <button className="text-primary-light m-2" onClick={openNote}>
               <FaPlus />
             </button>
           </span>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Layout from "../../layout/Layout";
 import { useMutation, useQueryClient } from "react-query";
 import { useForm } from "react-hook-form";
@@ -12,6 +12,8 @@ export type LoginFormData = {
 
 const Login = () => {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -21,6 +23,7 @@ const Login = () => {
   const mutation = useMutation(apiClient.logIn, {
     onSuccess: async () => {
       await queryClient.invalidateQueries("validateToken");
+      navigate(location.state?.from?.pathname || "/");
     },
     onError: (error: Error) => {
       console.log(error);

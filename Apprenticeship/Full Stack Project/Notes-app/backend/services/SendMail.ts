@@ -86,7 +86,7 @@ export const sendEmail = async () => {
       //   subject,
       //   text,
       from: '"Zarc Ahts 👻" <zarc@ahts.com>', // sender address
-      to: "voyano2455@namewok.com", // list of receivers
+      to: "heyward.kristijan@farmoaks.com", // list of receivers
       subject: "Reset Password", // Subject line
       //text: "Recovery Email", // plain text body
       html: emailTemplate, // html body

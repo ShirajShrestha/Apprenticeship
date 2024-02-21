@@ -4,9 +4,11 @@ import {
   getUsers,
   login,
   mailService,
+  validUser,
 } from "../controllers/userController";
 import { verifyRegister } from "../validator/validateRegister";
 import { verifyEmail } from "../validator/validateLogin";
+import verifyToken from "../validator/auth";
 
 const router = express.Router();
 
@@ -14,6 +16,8 @@ const router = express.Router();
 router.post("/register", verifyRegister, register);
 // Login
 router.post("/login", verifyEmail, login);
+// validate user token
+router.post("/validate-token", verifyToken, validUser);
 // Forgot password
 router.post("/forgotPassword");
 // Send email

@@ -9,6 +9,7 @@ export default {
         "secondary-blue": "#1b2a41",
         "primary-light": "#d7d9b1",
         "secondary-light": "#efbdeb",
+        "note-bg-blue": "#CDEFF1",
       },
     },
   },

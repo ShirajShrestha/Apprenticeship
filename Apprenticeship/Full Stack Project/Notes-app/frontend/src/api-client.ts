@@ -52,7 +52,7 @@ export const register = async (formData: RegisterFormData) => {
 
 //endpoint for login
 export const logIn = async (formData: LoginFormData) => {
-  const response = await fetch(`${API_BASE_URL}/auth/login`, {
+  const response = await fetch(`${API_BASE_URL}/users/login`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -67,7 +67,7 @@ export const logIn = async (formData: LoginFormData) => {
 
 // token to validate logged in user
 export const validateToken = async () => {
-  const response = await fetch(`${API_BASE_URL}/auth/validate-token`, {
+  const response = await fetch(`${API_BASE_URL}/users/validate-token`, {
     credentials: "include",
   });
   if (!response.ok) {

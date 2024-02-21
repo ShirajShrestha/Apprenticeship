@@ -72,6 +72,10 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
+export const validUser = (req: Request, res: Response) => {
+  res.status(200).send({ userId: req.userId });
+};
+
 export const forgotPassword = async (
   req: Request,
   res: Response,
