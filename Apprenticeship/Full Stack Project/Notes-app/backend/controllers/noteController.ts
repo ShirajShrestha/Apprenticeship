@@ -8,6 +8,7 @@ import {
 } from "../repository/noteRepository";
 
 export const postNote = async (req: Request, res: Response) => {
+  console.log(req.body);
   const { title, description, tags, image, file } = req.body;
   try {
     const postNewNote = await postNotes(title, description, tags, image, file);

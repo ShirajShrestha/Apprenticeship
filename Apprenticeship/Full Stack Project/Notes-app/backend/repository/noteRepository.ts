@@ -23,7 +23,7 @@ export const postNotes = async (
 };
 
 export const getAllNotes = async () => {
-  return await db.Notes.findAll();
+  return await db.Note.findAll();
 };
 
 export const getANote = async (req: Request, res: Response, id: string) => {

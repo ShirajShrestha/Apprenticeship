@@ -1,11 +1,12 @@
 import { FaPlus, FaSearch, FaUser, FaBars } from "react-icons/fa";
 import Layout from "../layout/Layout";
 import { useNavigate } from "react-router-dom";
+import NoteList from "../components/NoteList";
 
 const Home = () => {
   const navigate = useNavigate();
   const openNote = () => {
-    navigate("/note");
+    navigate("/add-note");
   };
 
   return (
@@ -42,7 +43,7 @@ const Home = () => {
           </span>
         </div>
 
-        <div className="my-4 grid grid-cols-2 gap-2 p-2 m-auto w-80">
+        {/* <div className="my-4 grid grid-cols-2 gap-2 p-2 m-auto w-80">
           <div className="flex flex-col bg-primary-light border-slate-600 rounded-lg h-32 cursor-pointer">
             <h3 className="text-xl font-medium px-2">Title</h3>
             <p className="text-medium px-2">Content</p>
@@ -55,7 +56,8 @@ const Home = () => {
             <h3 className="text-xl font-medium px-2">Title</h3>
             <p className="text-medium px-2">Content</p>
           </div>
-        </div>
+        </div> */}
+        <NoteList />
       </div>
     </Layout>
   );

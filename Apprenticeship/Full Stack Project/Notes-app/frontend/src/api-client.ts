@@ -1,6 +1,9 @@
-// import axios from "axios";
+import axios from "axios";
+// import { NoteType } from "../../backend/shared/types";
+import { NoteFormData } from "./components/AddNote";
 import { LoginFormData } from "./forms/Login/Login";
 import { RegisterFormData } from "./forms/Register/Register";
+import { Note } from "./components/NoteList";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
@@ -84,5 +87,39 @@ export const logOut = async () => {
   });
   if (!response.ok) {
     throw new Error("Error Logging Out");
+  }
+};
+
+// endpoint to add note
+export const addNewNote = async (formDataToSend: NoteFormData) => {
+  const response = await fetch(`${API_BASE_URL}/notes/postNote/`, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formDataToSend),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to add note");
+  }
+  const responseData = await response.json();
+  return responseData;
+};
+
+// for fetching notes
+// export const fetchNotes = async (): Promise<NoteType[]> => {
+//   const response = await fetch(`${API_BASE_URL}/notes/getNotes`);
+//   if (!response.ok) {
+//     throw new Error("Error fetching hotels");
+//   }
+//   return response.json();
+// };
+export const fetchNotes = async () => {
+  try {
+    const response = await axios.get<Note[]>(`${API_BASE_URL}/notes/getNotes`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching notes:", error);
   }
 };

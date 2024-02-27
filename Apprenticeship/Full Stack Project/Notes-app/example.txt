@@ -50,3 +50,6 @@ services:
 
 volumes:
   anime:
+
+  https://www.youtube.com/watch?v=mWg6NWaxEOs
+  https://www.youtube.com/watch?v=jRAHJJP5cd8

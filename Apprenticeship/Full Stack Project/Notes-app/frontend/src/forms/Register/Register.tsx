@@ -26,7 +26,6 @@ const Register = () => {
       navigate("/");
     },
     onError: (error: Error) => {
-      // showToast({ message: error.message, type: "ERROR" });
       console.log(error);
     },
   });

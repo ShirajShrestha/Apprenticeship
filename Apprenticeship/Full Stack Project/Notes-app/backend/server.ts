@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/users", userRoute);
-app.use("/users/note", noteRoute);
+app.use("/notes", noteRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server Started In Port:${process.env.PORT}`);
