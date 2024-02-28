@@ -43,21 +43,12 @@ const Home = () => {
           </span>
         </div>
 
-        {/* <div className="my-4 grid grid-cols-2 gap-2 p-2 m-auto w-80">
-          <div className="flex flex-col bg-primary-light border-slate-600 rounded-lg h-32 cursor-pointer">
-            <h3 className="text-xl font-medium px-2">Title</h3>
-            <p className="text-medium px-2">Content</p>
-          </div>
-          <div className="flex flex-col bg-primary-light border-slate-600 rounded-lg h-32 ">
-            <h3 className="text-xl font-medium px-2">Title</h3>
-            <p className="text-medium px-2">Content</p>
-          </div>
-          <div className="flex flex-col bg-primary-light border-slate-600 rounded-lg h-32 ">
-            <h3 className="text-xl font-medium px-2">Title</h3>
-            <p className="text-medium px-2">Content</p>
-          </div>
-        </div> */}
-        <NoteList />
+        <h2 className="text-3xl font-bold font-sans m-1 text-primary-light mb-4">
+          Your Notes
+        </h2>
+        <span className="overflow-scroll">
+          <NoteList />
+        </span>
       </div>
     </Layout>
   );

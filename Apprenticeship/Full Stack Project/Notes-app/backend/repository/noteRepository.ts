@@ -39,7 +39,7 @@ export const findNote = async (id: any, uid: any) => {
   return await db.Note.findOne({
     where: {
       id: id,
-      UserId: uid,
+      // UserId: uid,
     },
   });
 };
@@ -62,8 +62,8 @@ export const replaceNote = async (
   return updatedNote;
 };
 
-export const softDelete = async (id: any) => {
-  return await db.Note.findOne({
+export const DeleteCurrentNote = async (id: any) => {
+  return await db.Note.destroy({
     where: {
       id: id,
     },

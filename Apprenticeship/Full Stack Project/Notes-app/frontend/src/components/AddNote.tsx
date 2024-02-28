@@ -1,10 +1,9 @@
 import Layout from "../layout/Layout";
-// import { FaCode, FaFileImage, FaLessThan } from "react-icons/fa";
 import { FaLessThan } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { addNewNote } from "../api-client";
-import Markdown from "react-markdown";
+// import Markdown from "react-markdown";
 // MarkdownTextarea = require("react-markdown-textarea");
 // React.renderComponent(<MarkdownTextarea />, document.body);
 
@@ -49,7 +48,7 @@ const AddNote = () => {
   ) => {
     e.preventDefault();
     addNewNote(formData);
-    navigate("/note");
+    navigate("/");
   };
 
   const handleDesChange = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -65,12 +64,9 @@ const AddNote = () => {
 
   const handleDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (isMarkDown) {
-      const textToMd = <Markdown>{e.target.value}</Markdown>;
-      console.log(textToMd);
-      // console.log("changing text to md");
+      // const textToMd = <Markdown>{e.target.value}</Markdown>;
     } else {
       handleDescriptionChange(e);
-      console.log("saving");
     }
   };
 

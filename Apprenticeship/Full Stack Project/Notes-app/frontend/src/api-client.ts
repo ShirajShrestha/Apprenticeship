@@ -17,20 +17,6 @@ export const fetchCurrentUser = async () => {
   return response.json();
 };
 
-//endpoint for register
-// export const register = async (formData: RegisterFormData) => {
-//   const response = await fetch(`${API_BASE_URL}/users/register`, {
-//     method: "POST",
-//     // credentials: "include",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(formData),
-//   });
-//   const responseBody = await response.json();
-//   if (!response.ok) {
-//     throw new Error(responseBody.message);
-//   }
-// };
-
 export const register = async (formData: RegisterFormData) => {
   try {
     const response = await fetch(`${API_BASE_URL}/users/register`, {
@@ -107,19 +93,22 @@ export const addNewNote = async (formDataToSend: NoteFormData) => {
   return responseData;
 };
 
-// for fetching notes
-// export const fetchNotes = async (): Promise<NoteType[]> => {
-//   const response = await fetch(`${API_BASE_URL}/notes/getNotes`);
-//   if (!response.ok) {
-//     throw new Error("Error fetching hotels");
-//   }
-//   return response.json();
-// };
 export const fetchNotes = async () => {
   try {
     const response = await axios.get<Note[]>(`${API_BASE_URL}/notes/getNotes`);
     return response.data;
   } catch (error) {
     console.error("Error fetching notes:", error);
+  }
+};
+
+export const deleteNote = async (id: number) => {
+  try {
+    const response = await axios.delete(`${API_BASE_URL}/notes/${id}`);
+    if (response.status != 200) {
+      throw new Error("Failed to delete note");
+    }
+  } catch (error) {
+    console.log("Error deleting note", error);
   }
 };

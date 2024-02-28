@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import {
+  DeleteCurrentNote,
   findNote,
   getANote,
   getAllNotes,
@@ -66,4 +67,15 @@ export const updateNote = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteNote = async () => {};
+export const deleteNote = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  // const note = getNote(req, res, );
+  try {
+    const response = await DeleteCurrentNote(id);
+    if (response) {
+      res.status(200).json({ message: " Note Deleted Successfully" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting note" });
+  }
+};

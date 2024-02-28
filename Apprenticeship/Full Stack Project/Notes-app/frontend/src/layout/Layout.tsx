@@ -4,9 +4,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className=" bg-secondary-blue min-h-screen min-w-full p-6">
-      {children}
-    </div>
+    <div className=" bg-secondary-blue  p-6 md:max-w-md m-auto">{children}</div>
   );
 };
 
