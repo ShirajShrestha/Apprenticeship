@@ -112,3 +112,23 @@ export const deleteNote = async (id: number) => {
     console.log("Error deleting note", error);
   }
 };
+
+export const fetchNoteById = async (id: number) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/notes/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log("Error fetching current note");
+  }
+};
+
+export const updataNote = async (id: number, noteData: any) => {
+  try {
+    const response = await axios.put(`${API_BASE_URL}/notes/${id}`, noteData);
+    if (response.status != 201) {
+      throw new Error("Failed to update note");
+    }
+  } catch (error) {
+    console.log("Error updating note", error);
+  }
+};

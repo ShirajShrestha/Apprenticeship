@@ -24,7 +24,7 @@ const AddNote = () => {
   const [desType, setDesType] = useState("MD");
 
   const goBack = () => {
-    navigate("/note");
+    navigate("..");
   };
 
   const handleTitleChange = (

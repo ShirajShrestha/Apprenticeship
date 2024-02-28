@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 import {
   deleteNote,
+  getNote,
   getNotes,
   postNote,
   updateNote,
@@ -12,7 +13,7 @@ router.post("/postNote", postNote);
 // Get all notes
 router.get("/getNotes", getNotes);
 // Get single note
-router.get("/.getNote/:id");
+router.get("/:id", getNote);
 // Update note
 router.put("/:id", updateNote);
 // Delete note

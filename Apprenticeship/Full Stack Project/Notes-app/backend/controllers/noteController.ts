@@ -7,6 +7,7 @@ import {
   postNotes,
   replaceNote,
 } from "../repository/noteRepository";
+import { log } from "console";
 
 export const postNote = async (req: Request, res: Response) => {
   console.log(req.body);
@@ -46,14 +47,14 @@ export const getNote = async (req: Request, res: Response) => {
 export const updateNote = async (req: Request, res: Response) => {
   const { id, uid } = req.params;
   const { title, description, tags, image, file } = req.body;
+
   try {
-    const note = findNote(id, uid);
+    const note = await findNote(id, uid);
     if (!note) {
       return res.status(404).json({ message: "Note not found" });
     }
-
-    const updatedNote = replaceNote(
-      note,
+    const updatedNote = await replaceNote(
+      id,
       title,
       description,
       tags,

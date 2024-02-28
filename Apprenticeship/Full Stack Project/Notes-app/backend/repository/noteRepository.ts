@@ -23,16 +23,18 @@ export const postNotes = async (
 };
 
 export const getAllNotes = async () => {
-  return await db.Note.findAll();
+  return await db.Note.findAll({
+    order: [["createdAt", "DESC"]], // Sort by createdAt field in descending order
+  });
 };
 
 export const getANote = async (req: Request, res: Response, id: string) => {
-  const note = await db.Note.findOne({
+  return await db.Note.findOne({
     where: {
       id: id,
     },
   });
-  res.json(note);
+  // return res.json(note);
 };
 
 export const findNote = async (id: any, uid: any) => {
@@ -45,20 +47,25 @@ export const findNote = async (id: any, uid: any) => {
 };
 
 export const replaceNote = async (
-  note: any,
+  id: number | string,
   title: string,
   description: string,
   tags: string,
   image: string,
   file: string
 ) => {
-  const updatedNote = await note.update({
-    title,
-    description,
-    tags,
-    image,
-    file,
-  });
+  console.log(id, title, description, image);
+
+  const updatedNote = await db.Note.update(
+    {
+      title,
+      description,
+      tags,
+      image,
+      file,
+    },
+    { where: { id: id } }
+  );
   return updatedNote;
 };
 
